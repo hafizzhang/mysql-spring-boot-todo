@@ -4,16 +4,16 @@ services:
      build: 
        context: .
        dockerfile: Dockerfile-todo
-     #image: zhanyang/todo-demo:1.0.1
-     image: zhanyang/todo-demo:1.0.0
+     #image: hafiz/todo-demo:1.0.1
+     image: hafiz/todo-demo:1.0.0
      ports:
        - "8080:8080"
      depends_on:
        mysql:
          condition: service_healthy
      container_name: todo
-     networks: 
-       - mynet1
+     #networks: 
+     #  - mynet1
    
    mysql:
      environment:
@@ -24,11 +24,11 @@ services:
      build: 
        context: .
        dockerfile: Dockerfile-mysql
-     image: zhanyang/mysql:5.6
+     image: hafiz/mysql:5.6
      container_name: mysql
-     networks: 
-       - mynet1
+     #networks: 
+     #  - mynet1
 
-networks:
-  mynet1:
-    driver: bridge
+#networks:
+#  mynet1:
+#    driver: bridge
